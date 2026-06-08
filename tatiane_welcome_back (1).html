@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Back, Tatiane! | Teacher Fábio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=FREE"></script>
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-pale: #F5E6C0;
+    --charcoal: #1A1A2E;
+    --deep: #16213E;
+    --mid: #0F3460;
+    --ivory: #FAF7F0;
+    --warm: #F0EAD6;
+    --text: #2C2C2C;
+    --muted: #6B6B7A;
+    --white: #FFFFFF;
+    --ruby: #C0392B;
+    --emerald: #1A6B47;
+    --sapphire: #1B4F8A;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--ivory);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--charcoal) 0%, var(--deep) 50%, var(--mid) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 70%, rgba(201,168,76,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 20%, rgba(201,168,76,0.08) 0%, transparent 50%);
+  }
+  .cover-ornament {
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    opacity: 0.85;
+  }
+  .cover-line {
+    width: 80px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0 auto 30px;
+  }
+  .welcome-back {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 8vw, 78px);
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 2px;
+    line-height: 1.1;
+  }
+  .welcome-back span {
+    color: var(--gold-light);
+    font-style: italic;
+    font-weight: 600;
+    display: block;
+    font-size: clamp(50px, 10vw, 96px);
+  }
+  .cover-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    margin-top: 24px;
+  }
+  .cover-badge {
+    margin-top: 50px;
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 14px 36px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .cover-badge p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .cover-badge p:last-child {
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.3);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .scroll-arrow {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 70px 24px;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.15;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--mid);
+  }
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 20px auto;
+    max-width: 260px;
+  }
+  .divider span {
+    flex: 1; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+  .divider span:last-child {
+    background: linear-gradient(to left, transparent, var(--gold));
+  }
+  .divider-diamond {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* ── BANDS ── */
+  .band-dark {
+    background: linear-gradient(135deg, var(--charcoal), var(--deep));
+    padding: 70px 24px;
+  }
+  .band-dark .section {
+    padding: 0 24px;
+  }
+  .band-dark .section-title { color: var(--white); }
+  .band-dark .section-tag { color: var(--gold-light); }
+
+  .band-warm {
+    background: var(--warm);
+    padding: 70px 24px;
+  }
+  .band-warm .section { padding: 0 24px; }
+
+  /* ── PHRASE CARDS ── */
+  .phrase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .phrase-card {
+    background: var(--white);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 20px 22px;
+    position: relative;
+    transition: box-shadow 0.25s;
+  }
+  .phrase-card:hover {
+    box-shadow: 0 6px 28px rgba(201,168,76,0.15);
+  }
+  .phrase-card .en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.2;
+  }
+  .phrase-card .pt {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+  .phrase-card .audio-btn {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: transparent;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    color: var(--gold);
+    transition: background 0.2s, color 0.2s;
+  }
+  .phrase-card .audio-btn:hover { background: var(--gold); color: var(--white); }
+  .phrase-card .audio-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+  /* dark card variant */
+  .phrase-card.dark {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(201,168,76,0.25);
+  }
+  .phrase-card.dark .en { color: var(--white); }
+  .phrase-card.dark .pt { color: rgba(255,255,255,0.5); }
+  .phrase-card.dark .audio-btn { border-color: var(--gold-light); color: var(--gold-light); }
+  .phrase-card.dark .audio-btn:hover { background: var(--gold-light); color: var(--charcoal); }
+
+  /* ── VERB BOX ── */
+  .verb-explainer {
+    background: var(--white);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+    padding: 30px 32px;
+    margin: 36px 0;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+  }
+  .verb-explainer h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+  }
+  .verb-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 20px;
+  }
+  @media(max-width:560px){ .verb-cols { grid-template-columns:1fr; } }
+  .verb-col {
+    background: var(--warm);
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .verb-col h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--mid);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .verb-col p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .verb-col .example {
+    font-style: italic;
+    color: var(--mid);
+    font-size: 13px;
+    margin-top: 10px;
+    border-left: 2px solid var(--gold);
+    padding-left: 12px;
+  }
+
+  /* ── DIALOGUE ── */
+  .dialogue-scene {
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 36px 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  }
+  .dialogue-scene-header {
+    background: linear-gradient(90deg, var(--mid), var(--sapphire));
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .dialogue-scene-header .scene-icon {
+    font-size: 20px;
+  }
+  .dialogue-scene-header .scene-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+  .dialogue-scene-header .scene-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--white);
+    font-weight: 600;
+  }
+  .dialogue-body {
+    padding: 30px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bubble-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .bubble-wrap.right { flex-direction: row-reverse; }
+  .avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    flex-shrink: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  .avatar.a { background: linear-gradient(135deg, var(--mid), var(--sapphire)); color: var(--white); }
+  .avatar.b { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--charcoal); }
+  .bubble-content { max-width: 78%; }
+  .bubble-name {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .bubble-wrap.right .bubble-name { text-align: right; }
+  .bubble {
+    padding: 14px 18px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.55;
+    position: relative;
+  }
+  .bubble.a {
+    background: var(--warm);
+    border-radius: 4px 18px 18px 18px;
+    color: var(--text);
+  }
+  .bubble.b {
+    background: linear-gradient(135deg, var(--mid) 0%, var(--sapphire) 100%);
+    color: var(--white);
+    border-radius: 18px 4px 18px 18px;
+  }
+  .bubble .audio-btn-inline {
+    background: none; border: none; cursor: pointer;
+    font-size: 12px; margin-left: 8px;
+    color: inherit; opacity: 0.65;
+    transition: opacity 0.2s;
+    vertical-align: middle;
+  }
+  .bubble .audio-btn-inline:hover { opacity: 1; }
+  .bubble .audio-btn-inline:disabled { opacity: 0.3; cursor: not-allowed; }
+  .bubble-translation {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 5px;
+    font-style: italic;
+  }
+  .bubble-wrap.right .bubble-translation { text-align: right; }
+
+  /* ── DAYS TABLE ── */
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  @media(max-width:600px){
+    .days-grid { grid-template-columns: repeat(3, 1fr); }
+    .days-grid .day-cell:last-child { grid-column: 1 / -1; }
+  }
+  .day-cell {
+    background: var(--white);
+    border-right: 1px solid rgba(201,168,76,0.2);
+    padding: 0;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .day-cell:last-child { border-right: none; }
+  .day-cell:hover { background: var(--warm); }
+  .day-cell.sunday { background: linear-gradient(180deg, #fff5f5 0%, #ffe8e8 100%); }
+  .day-cell.sunday:hover { background: linear-gradient(180deg, #ffe8e8 0%, #ffd6d6 100%); }
+  .day-header {
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--deep) 100%);
+    padding: 10px 6px;
+    text-align: center;
+  }
+  .day-cell.sunday .day-header { background: linear-gradient(180deg, var(--ruby) 0%, #8B2020 100%); }
+  .day-header span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+  }
+  .day-cell.sunday .day-header span { color: #FFD0D0; }
+  .day-body { padding: 14px 6px; }
+  .day-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(13px, 2vw, 17px);
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.2;
+  }
+  .day-cell.sunday .day-name { color: var(--ruby); }
+  .day-pt {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0.3px;
+  }
+  .day-audio {
+    margin-top: 8px;
+  }
+  .day-audio button {
+    background: none;
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 50%;
+    width: 26px; height: 26px;
+    cursor: pointer;
+    font-size: 11px;
+    color: var(--gold);
+    transition: background 0.2s;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .day-audio button:hover { background: var(--gold); color: var(--white); }
+  .day-audio button:disabled { opacity: 0.35; cursor: not-allowed; }
+  .day-cell.sunday .day-audio button { border-color: rgba(192,57,43,0.4); color: var(--ruby); }
+  .day-cell.sunday .day-audio button:hover { background: var(--ruby); color: var(--white); }
+
+  /* ── BUSINESS DEPTS ── */
+  .dept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 18px;
+    margin-top: 36px;
+  }
+  .dept-card {
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 3px 18px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .dept-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+  .dept-img {
+    width: 100%; height: 130px;
+    object-fit: cover;
+    display: block;
+    background: linear-gradient(135deg, var(--mid), var(--charcoal));
+    position: relative;
+  }
+  .dept-img-placeholder {
+    width: 100%; height: 130px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 46px;
+  }
+  .dept-body { padding: 16px 18px; }
+  .dept-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+  .dept-pt {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+  }
+  .dept-desc {
+    font-size: 12.5px;
+    color: var(--text);
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+  .dept-tag {
+    display: inline-block;
+    background: var(--gold-pale);
+    color: var(--charcoal);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+
+  /* ── EXERCISES ── */
+  .ex-card {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 32px 32px 28px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    margin-bottom: 28px;
+  }
+  .ex-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .ex-card .ex-instruct {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 22px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .fill-item {
+    margin-bottom: 18px;
+  }
+  .fill-item label {
+    display: block;
+    font-size: 14.5px;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.7;
+  }
+  .fill-item input[type="text"] {
+    border: 1.5px solid rgba(201,168,76,0.4);
+    border-radius: 3px;
+    padding: 9px 14px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    width: 180px;
+    max-width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+    color: var(--text);
+    background: var(--ivory);
+  }
+  .fill-item input:focus { border-color: var(--gold); background: var(--white); }
+
+  .mc-item {
+    margin-bottom: 20px;
+  }
+  .mc-item .mc-q {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  .mc-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .mc-btn {
+    border: 1.5px solid rgba(201,168,76,0.4);
+    background: var(--ivory);
+    border-radius: 3px;
+    padding: 9px 18px;
+    font-size: 13.5px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    color: var(--text);
+    transition: all 0.2s;
+  }
+  .mc-btn:hover { border-color: var(--gold); background: var(--gold-pale); }
+  .mc-btn.selected {
+    background: linear-gradient(135deg, var(--mid), var(--sapphire));
+    color: var(--white);
+    border-color: var(--mid);
+  }
+
+  .order-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 16px;
+    background: var(--warm);
+    border-radius: 4px;
+  }
+  .order-chip {
+    background: var(--white);
+    border: 1.5px solid rgba(201,168,76,0.4);
+    border-radius: 3px;
+    padding: 7px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    transition: all 0.2s;
+  }
+  .order-chip:hover { border-color: var(--gold); background: var(--gold-pale); }
+  .order-chip.used { opacity: 0.35; pointer-events: none; }
+  .order-answer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 52px;
+    border: 2px dashed rgba(201,168,76,0.35);
+    border-radius: 4px;
+    padding: 10px 12px;
+    align-items: center;
+  }
+  .order-placed {
+    background: linear-gradient(135deg, var(--mid), var(--sapphire));
+    color: var(--white);
+    border-radius: 3px;
+    padding: 7px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: opacity 0.2s;
+  }
+  .order-placed:hover { opacity: 0.75; }
+  .order-hint {
+    font-size: 11px; color: var(--muted); font-style: italic;
+    margin-top: 8px;
+  }
+  .check-btn {
+    background: linear-gradient(135deg, var(--charcoal), var(--mid));
+    color: var(--white);
+    border: none;
+    border-radius: 3px;
+    padding: 11px 28px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .check-btn:hover { opacity: 0.85; }
+  .feedback-msg {
+    margin-top: 14px;
+    font-size: 13.5px;
+    padding: 12px 18px;
+    border-radius: 3px;
+    display: none;
+    line-height: 1.6;
+  }
+  .feedback-msg.show { display: block; }
+  .feedback-msg.neutral {
+    background: rgba(201,168,76,0.12);
+    color: var(--charcoal);
+    border-left: 3px solid var(--gold);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--charcoal);
+    text-align: center;
+    padding: 40px 24px;
+  }
+  .footer p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+  .footer .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--gold);
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  /* ── SMALL HELPERS ── */
+  .note-box {
+    background: rgba(201,168,76,0.1);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    border-radius: 0 4px 4px 0;
+    margin: 20px 0;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--charcoal);
+  }
+  .note-box strong { color: var(--mid); }
+  .tag-pill {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--charcoal);
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+  @media(max-width:600px){
+    .phrase-grid { grid-template-columns: 1fr 1fr; }
+    .dept-grid { grid-template-columns: 1fr 1fr; }
+    .ex-card { padding: 22px 18px; }
+  }
+  @media(max-width:400px){
+    .phrase-grid { grid-template-columns: 1fr; }
+    .dept-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="cover">
+  <p class="cover-ornament">✦ Teacher Fábio ✦</p>
+  <div class="cover-line"></div>
+  <div class="welcome-back">
+    Welcome Back
+    <span>Tatiane!</span>
+  </div>
+  <p class="cover-sub">English · A1 — Foundation Level</p>
+  <div class="cover-badge">
+    <p>Greetings · Introductions · Farewells</p>
+    <p>Days of the Week · Business Departments</p>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- ══════════ PART 1: GREETINGS ══════════ -->
+<div style="padding:70px 24px 0;">
+<div class="section" style="padding-top:0;">
+  <div class="section-header">
+    <span class="section-tag">Part One</span>
+    <h2 class="section-title">Greetings <em>— Hello!</em></h2>
+    <div class="divider"><span></span><div class="divider-diamond"></div><span></span></div>
+    <p style="font-size:13.5px; color:var(--muted); line-height:1.7; max-width:560px; margin:0 auto;">
+      We use greetings when we meet or see someone. Listen to each phrase and practise saying it out loud.
+    </p>
+  </div>
+
+  <div class="phrase-grid">
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'Hello!')">🔊</button>
+      <div class="en">Hello!</div>
+      <div class="pt">Olá!</div>
+    </div>
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'Hi!')">🔊</button>
+      <div class="en">Hi!</div>
+      <div class="pt">Oi!</div>
+    </div>
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'Good morning.')">🔊</button>
+      <div class="en">Good morning.</div>
+      <div class="pt">Bom dia.</div>
+    </div>
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'Good afternoon.')">🔊</button>
+      <div class="en">Good afternoon.</div>
+      <div class="pt">Boa tarde.</div>
+    </div>
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'Good evening.')">🔊</button>
+      <div class="en">Good evening.</div>
+      <div class="pt">Boa noite (chegada).</div>
+    </div>
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'How are you?')">🔊</button>
+      <div class="en">How are you?</div>
+      <div class="pt">Como você está?</div>
+    </div>
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'I am fine, thank you.')">🔊</button>
+      <div class="en">I am fine, thank you.</div>
+      <div class="pt">Estou bem, obrigada.</div>
+    </div>
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'Nice to meet you.')">🔊</button>
+      <div class="en">Nice to meet you.</div>
+      <div class="pt">Prazer em conhecê-lo/a.</div>
+    </div>
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'Nice to meet you too.')">🔊</button>
+      <div class="en">Nice to meet you too.</div>
+      <div class="pt">Prazer também.</div>
+    </div>
+    <div class="phrase-card">
+      <button class="audio-btn" disabled onclick="speak(this,'How do you do?')">🔊</button>
+      <div class="en">How do you do?</div>
+      <div class="pt">Muito prazer. <em style="font-size:11px;">(formal)</em></div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:36px;">
+    <strong>💡 Quick note:</strong> <em>"Good evening"</em> is used when you <strong>arrive</strong> somewhere at night.
+    <em>"Good night"</em> is only used when you are <strong>leaving</strong> or going to sleep.
+  </div>
+</div>
+</div>
+
+<!-- ══════════ PART 2: INTRODUCE vs PRESENT ══════════ -->
+<div class="band-warm">
+<div class="section">
+  <div class="section-header">
+    <span class="section-tag">Part Two</span>
+    <h2 class="section-title">Introduce <em>or</em> Present?</h2>
+    <div class="divider"><span></span><div class="divider-diamond"></div><span></span></div>
+    <p style="font-size:13.5px; color:var(--muted); line-height:1.7; max-width:560px; margin:0 auto;">
+      These two verbs are often confused. Let's see the difference clearly.
+    </p>
+  </div>
+
+  <div class="verb-explainer">
+    <h3>TO INTRODUCE &nbsp;/&nbsp; TO PRESENT</h3>
+    <div class="verb-cols">
+      <div class="verb-col">
+        <h4>TO INTRODUCE</h4>
+        <p>You <strong>introduce</strong> someone — you make a new connection between two people who do not know each other yet. You bring them together for the first time.</p>
+        <div class="example">
+          "Let me <strong>introduce</strong> my colleague, Sarah."<br>
+          "I would like to <strong>introduce</strong> you to our new manager."
+        </div>
+      </div>
+      <div class="verb-col">
+        <h4>TO PRESENT</h4>
+        <p>You <strong>present</strong> something — a project, a report, an idea — <em>or</em> in very formal contexts, you can present a person to an audience or authority.</p>
+        <div class="example">
+          "I will <strong>present</strong> our new product today."<br>
+          "She will <strong>present</strong> the results to the board."
+        </div>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:20px;">
+      <strong>The simple rule:</strong> Use <em>"introduce"</em> for people meeting people. Use <em>"present"</em> for showing ideas, projects, or data — or in very formal ceremonies.
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ PART 3: DIALOGUES ══════════ -->
+<div style="padding:70px 24px 0;">
+<div class="section" style="padding-top:0;">
+  <div class="section-header">
+    <span class="section-tag">Part Three</span>
+    <h2 class="section-title">Dialogues <em>— Meeting People</em></h2>
+    <div class="divider"><span></span><div class="divider-diamond"></div><span></span></div>
+    <p style="font-size:13.5px; color:var(--muted); line-height:1.7; max-width:560px; margin:0 auto;">
+      Read and listen to these dialogues. They happen in a professional environment — an office or a business event.
+    </p>
+  </div>
+
+  <!-- Dialogue 1 -->
+  <div class="dialogue-scene">
+    <div class="dialogue-scene-header">
+      <span class="scene-icon">🏢</span>
+      <div>
+        <div class="scene-label">Dialogue 1</div>
+        <div class="scene-title">First day at the office</div>
+      </div>
+    </div>
+    <div class="dialogue-body">
+      <div class="bubble-wrap">
+        <div class="avatar a">L</div>
+        <div class="bubble-content">
+          <div class="bubble-name">Laura</div>
+          <div class="bubble a">
+            Good morning! My name is Laura. I am the HR Manager.
+            <button class="audio-btn-inline" disabled onclick="speak(this,'Good morning! My name is Laura. I am the HR Manager.')">🔊</button>
+          </div>
+          <div class="bubble-translation">Bom dia! Meu nome é Laura. Eu sou a Gerente de RH.</div>
+        </div>
+      </div>
+      <div class="bubble-wrap right">
+        <div class="avatar b">T</div>
+        <div class="bubble-content">
+          <div class="bubble-name">Tom</div>
+          <div class="bubble b">
+            Good morning, Laura. I am Tom. Nice to meet you.
+            <button class="audio-btn-inline" disabled onclick="speak(this,'Good morning, Laura. I am Tom. Nice to meet you.')">🔊</button>
+          </div>
+          <div class="bubble-translation">Bom dia, Laura. Eu sou Tom. Prazer em conhecê-la.</div>
+        </div>
+      </div>
+      <div class="bubble-wrap">
+        <div class="avatar a">L</div>
+        <div class="bubble-content">
+          <div class="bubble-name">Laura</div>
+          <div class="bubble a">
+            Nice to meet you too, Tom. What department are you in?
+            <button class="audio-btn-inline" disabled onclick="speak(this,'Nice to meet you too, Tom. What department are you in?')">🔊</button>
+          </div>
+          <div class="bubble-translation">Prazer também, Tom. Em qual departamento você trabalha?</div>
+        </div>
+      </div>
+      <div class="bubble-wrap right">
+        <div class="avatar b">T</div>
+        <div class="bubble-content">
+          <div class="bubble-name">Tom</div>
+          <div class="bubble b">
+            I am in the Marketing department. And you?
+            <button class="audio-btn-inline" disabled onclick="speak(this,'I am in the Marketing department. And you?')">🔊</button>
+          </div>
+          <div class="bubble-translation">Eu estou no departamento de Marketing. E você?</div>
+        </div>
+      </div>
+      <div class="bubble-wrap">
+        <div class="avatar a">L</div>
+        <div class="bubble-content">
+          <div class="bubble-name">Laura</div>
+          <div class="bubble a">
+            I work in Human Resources. Welcome to the team!
+            <button class="audio-btn-inline" disabled onclick="speak(this,'I work in Human Resources. Welcome to the team!')">🔊</button>
+          </div>
+          <div class="bubble-translation">Eu trabalho em Recursos Humanos. Bem-vindo à equipe!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dialogue 2 -->
+  <div class="dialogue-scene">
+    <div class="dialogue-scene-header">
+      <span class="scene-icon">☕</span>
+      <div>
+        <div class="scene-label">Dialogue 2</div>
+        <div class="scene-title">Introducing a colleague</div>
+      </div>
+    </div>
+    <div class="dialogue-body">
+      <div class="bubble-wrap">
+        <div class="avatar a">A</div>
+        <div class="bubble-content">
+          <div class="bubble-name">Ana</div>
+          <div class="bubble a">
+            Hi, Carlos! Let me introduce you to our new colleague. This is Tatiane.
+            <button class="audio-btn-inline" disabled onclick="speak(this,'Hi, Carlos! Let me introduce you to our new colleague. This is Tatiane.')">🔊</button>
+          </div>
+          <div class="bubble-translation">Oi, Carlos! Deixe-me apresentar nossa nova colega. Esta é Tatiane.</div>
+        </div>
+      </div>
+      <div class="bubble-wrap right">
+        <div class="avatar b">C</div>
+        <div class="bubble-content">
+          <div class="bubble-name">Carlos</div>
+          <div class="bubble b">
+            Hello, Tatiane! How do you do? I am Carlos, from the Finance department.
+            <button class="audio-btn-inline" disabled onclick="speak(this,'Hello, Tatiane! How do you do? I am Carlos, from the Finance department.')">🔊</button>
+          </div>
+          <div class="bubble-translation">Olá, Tatiane! Muito prazer. Sou Carlos, do departamento Financeiro.</div>
+        </div>
+      </div>
+      <div class="bubble-wrap">
+        <div class="avatar a">T</div>
+        <div class="bubble-content">
+          <div class="bubble-name">Tatiane</div>
+          <div class="bubble a">
+            How do you do, Carlos! I am in the Administration department. Great to be here!
+            <button class="audio-btn-inline" disabled onclick="speak(this,'How do you do, Carlos! I am in the Administration department. Great to be here!')">🔊</button>
+          </div>
+          <div class="bubble-translation">Muito prazer, Carlos! Estou no departamento de Administração. É ótimo estar aqui!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ PART 4: FAREWELLS ══════════ -->
+<div class="band-dark">
+<div class="section">
+  <div class="section-header">
+    <span class="section-tag" style="color:var(--gold-light);">Part Four</span>
+    <h2 class="section-title">Farewells <em>— Goodbye!</em></h2>
+    <div class="divider"><span></span><div class="divider-diamond"></div><span></span></div>
+    <p style="font-size:13.5px; color:rgba(255,255,255,0.5); line-height:1.7; max-width:560px; margin:0 auto;">
+      We use farewells when leaving. Many farewells use the days of the week — so let's learn them together!
+    </p>
+  </div>
+
+  <div class="phrase-grid">
+    <div class="phrase-card dark">
+      <button class="audio-btn" disabled onclick="speak(this,'Goodbye!')">🔊</button>
+      <div class="en">Goodbye!</div>
+      <div class="pt">Adeus! / Tchau!</div>
+    </div>
+    <div class="phrase-card dark">
+      <button class="audio-btn" disabled onclick="speak(this,'Bye! See you later.')">🔊</button>
+      <div class="en">Bye! See you later.</div>
+      <div class="pt">Tchau! Até mais.</div>
+    </div>
+    <div class="phrase-card dark">
+      <button class="audio-btn" disabled onclick="speak(this,'Good night.')">🔊</button>
+      <div class="en">Good night.</div>
+      <div class="pt">Boa noite (despedida).</div>
+    </div>
+    <div class="phrase-card dark">
+      <button class="audio-btn" disabled onclick="speak(this,'See you tomorrow.')">🔊</button>
+      <div class="en">See you tomorrow.</div>
+      <div class="pt">Até amanhã.</div>
+    </div>
+    <div class="phrase-card dark">
+      <button class="audio-btn" disabled onclick="speak(this,'See you on Monday.')">🔊</button>
+      <div class="en">See you on Monday.</div>
+      <div class="pt">Até segunda-feira.</div>
+    </div>
+    <div class="phrase-card dark">
+      <button class="audio-btn" disabled onclick="speak(this,'See you on Friday.')">🔊</button>
+      <div class="en">See you on Friday.</div>
+      <div class="pt">Até sexta-feira.</div>
+    </div>
+    <div class="phrase-card dark">
+      <button class="audio-btn" disabled onclick="speak(this,'Have a great weekend!')">🔊</button>
+      <div class="en">Have a great weekend!</div>
+      <div class="pt">Ótimo fim de semana!</div>
+    </div>
+    <div class="phrase-card dark">
+      <button class="audio-btn" disabled onclick="speak(this,'Take care!')">🔊</button>
+      <div class="en">Take care!</div>
+      <div class="pt">Cuide-se!</div>
+    </div>
+    <div class="phrase-card dark">
+      <button class="audio-btn" disabled onclick="speak(this,'It was nice talking to you.')">🔊</button>
+      <div class="en">It was nice talking to you.</div>
+      <div class="pt">Foi bom falar com você.</div>
+    </div>
+  </div>
+
+  <div class="note-box" style="background:rgba(201,168,76,0.08); border-left:3px solid var(--gold); margin-top:36px;">
+    <strong style="color:var(--gold-light);">🗓️ Grammar tip:</strong> <span style="color:rgba(255,255,255,0.75);">We say <em>"See you ON Monday"</em> — always with the preposition <strong>ON</strong> before days of the week.</span>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ PART 5: DAYS OF THE WEEK ══════════ -->
+<div style="padding:70px 24px 0;">
+<div class="section" style="padding-top:0;">
+  <div class="section-header">
+    <span class="section-tag">Part Five</span>
+    <h2 class="section-title">Days of the Week <em>— The Calendar</em></h2>
+    <div class="divider"><span></span><div class="divider-diamond"></div><span></span></div>
+    <p style="font-size:13.5px; color:var(--muted); line-height:1.7; max-width:580px; margin:0 auto;">
+      In English, the week starts on <strong>Sunday</strong>. Days always start with a capital letter. Click 🔊 to hear each day.
+    </p>
+  </div>
+
+  <div class="days-grid">
+    <div class="day-cell sunday">
+      <div class="day-header"><span>01</span></div>
+      <div class="day-body">
+        <div class="day-name">Sunday</div>
+        <div class="day-pt">Domingo</div>
+        <div class="day-audio"><button disabled onclick="speak(this,'Sunday')">🔊</button></div>
+      </div>
+    </div>
+    <div class="day-cell">
+      <div class="day-header"><span>02</span></div>
+      <div class="day-body">
+        <div class="day-name">Monday</div>
+        <div class="day-pt">Segunda-feira</div>
+        <div class="day-audio"><button disabled onclick="speak(this,'Monday')">🔊</button></div>
+      </div>
+    </div>
+    <div class="day-cell">
+      <div class="day-header"><span>03</span></div>
+      <div class="day-body">
+        <div class="day-name">Tuesday</div>
+        <div class="day-pt">Terça-feira</div>
+        <div class="day-audio"><button disabled onclick="speak(this,'Tuesday')">🔊</button></div>
+      </div>
+    </div>
+    <div class="day-cell">
+      <div class="day-header"><span>04</span></div>
+      <div class="day-body">
+        <div class="day-name">Wednesday</div>
+        <div class="day-pt">Quarta-feira</div>
+        <div class="day-audio"><button disabled onclick="speak(this,'Wednesday')">🔊</button></div>
+      </div>
+    </div>
+    <div class="day-cell">
+      <div class="day-header"><span>05</span></div>
+      <div class="day-body">
+        <div class="day-name">Thursday</div>
+        <div class="day-pt">Quinta-feira</div>
+        <div class="day-audio"><button disabled onclick="speak(this,'Thursday')">🔊</button></div>
+      </div>
+    </div>
+    <div class="day-cell">
+      <div class="day-header"><span>06</span></div>
+      <div class="day-body">
+        <div class="day-name">Friday</div>
+        <div class="day-pt">Sexta-feira</div>
+        <div class="day-audio"><button disabled onclick="speak(this,'Friday')">🔊</button></div>
+      </div>
+    </div>
+    <div class="day-cell">
+      <div class="day-header"><span>07</span></div>
+      <div class="day-body">
+        <div class="day-name">Saturday</div>
+        <div class="day-pt">Sábado</div>
+        <div class="day-audio"><button disabled onclick="speak(this,'Saturday')">🔊</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:32px;">
+    <strong>🗓️ Remember:</strong> In Brazil, the week starts on <em>Monday</em>. In English-speaking countries, the week traditionally starts on <strong>Sunday</strong>. Always write days with a <strong>capital letter</strong>: Monday, not monday.
+  </div>
+</div>
+</div>
+
+<!-- ══════════ PART 6: BUSINESS DEPARTMENTS ══════════ -->
+<div class="band-warm">
+<div class="section">
+  <div class="section-header">
+    <span class="section-tag">Part Six</span>
+    <h2 class="section-title">Business Departments <em>— What is your department?</em></h2>
+    <div class="divider"><span></span><div class="divider-diamond"></div><span></span></div>
+    <p style="font-size:13.5px; color:var(--muted); line-height:1.7; max-width:580px; margin:0 auto;">
+      When you introduce yourself professionally, you say which department you work in. Learn the most important ones below.
+    </p>
+  </div>
+
+  <div class="note-box">
+    <strong>How to say it:</strong> <em>"I work in the <strong>Marketing</strong> department."</em> &nbsp;|&nbsp; <em>"I am in <strong>Finance</strong>."</em>
+  </div>
+
+  <div class="dept-grid">
+    <div class="dept-card">
+      <div class="dept-img-placeholder" style="background:linear-gradient(135deg,#1A6B47,#0D4A32);">💼</div>
+      <div class="dept-body">
+        <div class="dept-name">Human Resources</div>
+        <div class="dept-pt">Recursos Humanos · RH</div>
+        <div class="dept-desc">Manages hiring, employee welfare, training and company culture.</div>
+        <span class="dept-tag">HR · People</span>
+      </div>
+    </div>
+    <div class="dept-card">
+      <div class="dept-img-placeholder" style="background:linear-gradient(135deg,#1B4F8A,#0D2E52);">📊</div>
+      <div class="dept-body">
+        <div class="dept-name">Finance</div>
+        <div class="dept-pt">Financeiro</div>
+        <div class="dept-desc">Controls the company's money: budgets, payments and financial reports.</div>
+        <span class="dept-tag">Numbers · Money</span>
+      </div>
+    </div>
+    <div class="dept-card">
+      <div class="dept-img-placeholder" style="background:linear-gradient(135deg,#7D3C98,#4A235A);">📣</div>
+      <div class="dept-body">
+        <div class="dept-name">Marketing</div>
+        <div class="dept-pt">Marketing</div>
+        <div class="dept-desc">Promotes products and services, manages brand image and communication.</div>
+        <span class="dept-tag">Brand · Strategy</span>
+      </div>
+    </div>
+    <div class="dept-card">
+      <div class="dept-img-placeholder" style="background:linear-gradient(135deg,#C9A84C,#8B6B2A);">🤝</div>
+      <div class="dept-body">
+        <div class="dept-name">Sales</div>
+        <div class="dept-pt">Vendas / Comercial</div>
+        <div class="dept-desc">Sells the company's products or services to clients and partners.</div>
+        <span class="dept-tag">Revenue · Clients</span>
+      </div>
+    </div>
+    <div class="dept-card">
+      <div class="dept-img-placeholder" style="background:linear-gradient(135deg,#C0392B,#7B241C);">💻</div>
+      <div class="dept-body">
+        <div class="dept-name">IT</div>
+        <div class="dept-pt">Tecnologia da Informação</div>
+        <div class="dept-desc">Manages computers, networks, software and all technology in the company.</div>
+        <span class="dept-tag">Tech · Systems</span>
+      </div>
+    </div>
+    <div class="dept-card">
+      <div class="dept-img-placeholder" style="background:linear-gradient(135deg,#1A6B47,#0D4A32);">⚙️</div>
+      <div class="dept-body">
+        <div class="dept-name">Operations</div>
+        <div class="dept-pt">Operações</div>
+        <div class="dept-desc">Makes sure the company runs smoothly every day — processes and logistics.</div>
+        <span class="dept-tag">Processes · Flow</span>
+      </div>
+    </div>
+    <div class="dept-card">
+      <div class="dept-img-placeholder" style="background:linear-gradient(135deg,#2C3E50,#1A252F);">📋</div>
+      <div class="dept-body">
+        <div class="dept-name">Administration</div>
+        <div class="dept-pt">Administração / Administrativo</div>
+        <div class="dept-desc">Organises documents, schedules and the general running of the office.</div>
+        <span class="dept-tag">Organisation</span>
+      </div>
+    </div>
+    <div class="dept-card">
+      <div class="dept-img-placeholder" style="background:linear-gradient(135deg,#117A65,#0A5247);">⚖️</div>
+      <div class="dept-body">
+        <div class="dept-name">Legal</div>
+        <div class="dept-pt">Jurídico</div>
+        <div class="dept-desc">Handles contracts, legal compliance and company law matters.</div>
+        <span class="dept-tag">Law · Contracts</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ PART 7: EXERCISES ══════════ -->
+<div style="padding:70px 24px 70px;">
+<div class="section" style="padding-top:0;">
+  <div class="section-header">
+    <span class="section-tag">Part Seven</span>
+    <h2 class="section-title">Exercises <em>— Let's Practise!</em></h2>
+    <div class="divider"><span></span><div class="divider-diamond"></div><span></span></div>
+  </div>
+
+  <!-- Exercise A: Fill in the Dialogue -->
+  <div class="ex-card">
+    <h3>Exercise A — Complete the Dialogue</h3>
+    <p class="ex-instruct">Fill in each blank to complete the dialogue. Use the words from the box below: <strong>department · introduce · morning · meet · name · Fine</strong></p>
+    <div style="background:var(--gold-pale); border-radius:4px; padding:14px 18px; margin-bottom:22px; font-size:13px; letter-spacing:0.5px; color:var(--charcoal);">
+      <strong>Word bank:</strong> &nbsp; department &nbsp;·&nbsp; introduce &nbsp;·&nbsp; morning &nbsp;·&nbsp; meet &nbsp;·&nbsp; name &nbsp;·&nbsp; Fine
+    </div>
+
+    <div class="fill-item">
+      <label>1. Good <strong>__________</strong>! How are you today?</label>
+      <input type="text" placeholder="type here…">
+    </div>
+    <div class="fill-item">
+      <label>2. I'm <strong>__________</strong>, thank you. And you?</label>
+      <input type="text" placeholder="type here…">
+    </div>
+    <div class="fill-item">
+      <label>3. My <strong>__________</strong> is Tatiane. Nice to meet you.</label>
+      <input type="text" placeholder="type here…">
+    </div>
+    <div class="fill-item">
+      <label>4. Nice to <strong>__________</strong> you too!</label>
+      <input type="text" placeholder="type here…">
+    </div>
+    <div class="fill-item">
+      <label>5. Let me <strong>__________</strong> you to my colleague, Ana.</label>
+      <input type="text" placeholder="type here…">
+    </div>
+    <div class="fill-item">
+      <label>6. What <strong>__________</strong> are you in?</label>
+      <input type="text" placeholder="type here…">
+    </div>
+  </div>
+
+  <!-- Exercise B: Put the days in order -->
+  <div class="ex-card">
+    <h3>Exercise B — Put the Days in Order</h3>
+    <p class="ex-instruct">The days below are in the wrong order. Click each day to place it in the correct sequence. Click a placed day to remove it.</p>
+
+    <div class="order-bank" id="bankB">
+      <span class="order-chip" onclick="placeDay(this,'Thursday')">Thursday</span>
+      <span class="order-chip" onclick="placeDay(this,'Tuesday')">Tuesday</span>
+      <span class="order-chip" onclick="placeDay(this,'Sunday')">Sunday</span>
+      <span class="order-chip" onclick="placeDay(this,'Saturday')">Saturday</span>
+      <span class="order-chip" onclick="placeDay(this,'Monday')">Monday</span>
+      <span class="order-chip" onclick="placeDay(this,'Wednesday')">Wednesday</span>
+      <span class="order-chip" onclick="placeDay(this,'Friday')">Friday</span>
+    </div>
+
+    <div class="order-answer" id="answerB">
+      <span style="font-size:12px; color:var(--muted); font-style:italic;" id="answerHint">← Click the days above to place them here</span>
+    </div>
+    <p class="order-hint">Tip: In English, the week starts with Sunday.</p>
+  </div>
+
+  <!-- Exercise C: Multiple Choice Greetings -->
+  <div class="ex-card">
+    <h3>Exercise C — Multiple Choice</h3>
+    <p class="ex-instruct">Choose the best option for each situation. Click your answer.</p>
+
+    <div class="mc-item">
+      <div class="mc-q">1. You arrive at the office at 8 a.m. and see your colleague. You say:</div>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="selectMC(this)">Good night!</button>
+        <button class="mc-btn" onclick="selectMC(this)">Good morning!</button>
+        <button class="mc-btn" onclick="selectMC(this)">Goodbye!</button>
+        <button class="mc-btn" onclick="selectMC(this)">Good evening!</button>
+      </div>
+    </div>
+    <div class="mc-item">
+      <div class="mc-q">2. Your manager asks: "How are you?" You answer:</div>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="selectMC(this)">I am fine, thank you.</button>
+        <button class="mc-btn" onclick="selectMC(this)">Goodbye!</button>
+        <button class="mc-btn" onclick="selectMC(this)">Nice to meet you.</button>
+      </div>
+    </div>
+    <div class="mc-item">
+      <div class="mc-q">3. You want to say goodbye on Thursday evening. You say:</div>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="selectMC(this)">See you on Friday!</button>
+        <button class="mc-btn" onclick="selectMC(this)">Have a great weekend!</button>
+        <button class="mc-btn" onclick="selectMC(this)">Good morning!</button>
+        <button class="mc-btn" onclick="selectMC(this)">How do you do?</button>
+      </div>
+    </div>
+    <div class="mc-item">
+      <div class="mc-q">4. You want to introduce your friend to a colleague. You say:</div>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="selectMC(this)">Let me present my friend.</button>
+        <button class="mc-btn" onclick="selectMC(this)">Let me introduce my friend.</button>
+        <button class="mc-btn" onclick="selectMC(this)">Let me show my friend.</button>
+      </div>
+    </div>
+    <div class="mc-item">
+      <div class="mc-q">5. Which department deals with MONEY and BUDGETS?</div>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="selectMC(this)">Marketing</button>
+        <button class="mc-btn" onclick="selectMC(this)">Human Resources</button>
+        <button class="mc-btn" onclick="selectMC(this)">Finance</button>
+        <button class="mc-btn" onclick="selectMC(this)">Legal</button>
+      </div>
+    </div>
+    <div class="mc-item">
+      <div class="mc-q">6. What comes AFTER Wednesday?</div>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="selectMC(this)">Tuesday</button>
+        <button class="mc-btn" onclick="selectMC(this)">Thursday</button>
+        <button class="mc-btn" onclick="selectMC(this)">Monday</button>
+        <button class="mc-btn" onclick="selectMC(this)">Friday</button>
+      </div>
+    </div>
+
+    <button class="check-btn" onclick="checkMC()">Submit My Answers</button>
+    <div class="feedback-msg neutral" id="mc-feedback"></div>
+  </div>
+
+  <!-- Exercise D: Complete the farewells -->
+  <div class="ex-card">
+    <h3>Exercise D — Complete the Farewell</h3>
+    <p class="ex-instruct">Complete each farewell with the correct day of the week.</p>
+
+    <div class="fill-item">
+      <label>1. Today is Monday. You will see your friend tomorrow. You say: <em>"See you on __________."</em></label>
+      <input type="text" placeholder="day of the week…">
+    </div>
+    <div class="fill-item">
+      <label>2. Today is Friday. You say: <em>"Have a great __________!"</em></label>
+      <input type="text" placeholder="type here…">
+    </div>
+    <div class="fill-item">
+      <label>3. Today is Wednesday. Your meeting is in two days. You say: <em>"See you on __________."</em></label>
+      <input type="text" placeholder="day of the week…">
+    </div>
+    <div class="fill-item">
+      <label>4. It is late. You are leaving the office. You say: <em>"Good __________!"</em></label>
+      <input type="text" placeholder="type here…">
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Prepared exclusively for</p>
+  <div class="footer-name">Tatiane Muniz</div>
+  <p style="margin-top:12px;">Teacher Fábio · English Lessons · A1 Foundation</p>
+</div>
+
+<script>
+// ── AUDIO ──
+var rvReady = false;
+function enableAudioButtons() {
+  try {
+    var btns = document.querySelectorAll('.audio-btn, .audio-btn-inline, .day-audio button');
+    btns.forEach(function(b){ b.disabled = false; });
+    rvReady = true;
+  } catch(e){}
+}
+function speak(btn, text) {
+  try {
+    if (!rvReady) return;
+    responsiveVoice.speak(text, 'US English Female', {
+      onstart: function(){ if(btn){ btn.textContent = '⏹'; } },
+      onend:   function(){ if(btn){ btn.textContent = '🔊'; } },
+      onerror: function(){ if(btn){ btn.textContent = '🔊'; } }
+    });
+  } catch(e){ console.warn('Audio error:', e); }
+}
+window.addEventListener('load', function(){
+  try {
+    var check = setInterval(function(){
+      if (typeof responsiveVoice !== 'undefined' && responsiveVoice.voiceSupport()) {
+        clearInterval(check);
+        enableAudioButtons();
+      }
+    }, 400);
+    setTimeout(function(){ clearInterval(check); }, 10000);
+  } catch(e){}
+});
+
+// ── MULTIPLE CHOICE ──
+function selectMC(btn) {
+  try {
+    var group = btn.closest('.mc-options');
+    group.querySelectorAll('.mc-btn').forEach(function(b){ b.classList.remove('selected'); });
+    btn.classList.add('selected');
+  } catch(e){}
+}
+function checkMC() {
+  try {
+    var total = document.querySelectorAll('.mc-item').length;
+    var answered = document.querySelectorAll('.mc-btn.selected').length;
+    var fb = document.getElementById('mc-feedback');
+    fb.className = 'feedback-msg neutral show';
+    if (answered < total) {
+      fb.textContent = 'You answered ' + answered + ' of ' + total + ' questions. Please answer all questions before submitting!';
+    } else {
+      fb.textContent = '✓ All ' + total + ' answers submitted! Your teacher will review your choices in class. Well done for completing the exercise!';
+    }
+  } catch(e){}
+}
+
+// ── DAYS ORDER ──
+var placedDays = [];
+function placeDay(chip, day) {
+  try {
+    chip.classList.add('used');
+    placedDays.push(day);
+    renderAnswer();
+  } catch(e){}
+}
+function removeDay(placedChip, day) {
+  try {
+    placedDays.splice(placedDays.indexOf(day), 1);
+    // re-enable source chip
+    var chips = document.querySelectorAll('#bankB .order-chip');
+    chips.forEach(function(c){
+      if (c.textContent.trim() === day) c.classList.remove('used');
+    });
+    renderAnswer();
+  } catch(e){}
+}
+function renderAnswer() {
+  try {
+    var box = document.getElementById('answerB');
+    box.innerHTML = '';
+    if (placedDays.length === 0) {
+      box.innerHTML = '<span style="font-size:12px; color:var(--muted); font-style:italic;">← Click the days above to place them here</span>';
+      return;
+    }
+    placedDays.forEach(function(d){
+      var el = document.createElement('span');
+      el.className = 'order-placed';
+      el.textContent = d;
+      el.onclick = function(){ removeDay(el, d); };
+      box.appendChild(el);
+    });
+  } catch(e){}
+}
+</script>
+</body>
+</html>
